@@ -11,6 +11,8 @@ body {
     overflow: hidden; /* Prevents scrolling */
     background-color: #f2c4c4;
     position: relative;
+    height: 100vh; /* Ensures body takes the full height of the viewport */
+    width: 100vw; /* Ensures body takes the full width of the viewport */
     /* cursor: none !important; */
 }
 /* button {
