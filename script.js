@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('cursor-sound'); // Get the audio element
-    const whooshAudio=document.getElementById('whoosh-sound');
+    const whooshAudio = document.getElementById('whoosh-sound');
     const customCursor = document.getElementById('custom-cursor'); // Get the custom cursor element
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 800;
 
     // Initialize balls with different speeds
     const balls = [
@@ -17,8 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add click event listener to each ball
         ball.element.addEventListener('click', (event) => {
+            if(isMobile){
+                handleCursorChange(event,false)
+                return
+            }
             event.stopPropagation(); // Prevents the click from bubbling to the body
-            handleCursorChange(event);
+            audio.currentTime = 0; // Reset audio to start
+            audio.play();
+            ball.element.classList.add('custom-cursor-click'); // Add custom cursor class
+
+            setTimeout(() => {
+                ball.element.classList.remove('custom-cursor-click'); // Remove custom cursor class after 1 second
+            }, 1000);
         });
     });
 
@@ -32,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             audio.currentTime = 0; // Reset audio to start
             audio.play(); // Play the audio
-        }else{
+        } else {
             whooshAudio.currentTime = 0;
             whooshAudio.play()
         }
@@ -107,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add click event listener to the body for handling clicks outside the balls
     document.body.addEventListener('click', (event) => {
         if (!event.target.classList.contains('ball')) {
-            handleCursorChange(event,true);
+            handleCursorChange(event, true);
         }
     });
 });
