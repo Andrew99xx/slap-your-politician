@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', function () {
             clientY = event.clientY;
         }
 
-
-        customCursor.style.left = `${clientX - 15}px`; // Adjust for cursor size
-        customCursor.style.top = `${clientY - 15}px`;
+        
+        customCursor.style.left = `${clientX - 150}px`; // Adjust for cursor size
+        customCursor.style.top = `${clientY - 200}px`;
 
     }
 
@@ -200,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let countdown = 3;
     function updateCountdown() {
         if (countdown > 0) {
-            countdownElement.textContent = countdown;
+            countdownElement.innerHTML = ` <br>
+             Play 30 secs for result `;
             countdown--;
             setTimeout(updateCountdown, 1000); // Update countdown every second
         } else {
