@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .countdown {
+            font-size: 5rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown" id="countdown">3</div>
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let count = 3;
+
+        function updateCountdown() {
+            count--;
+            if (count > 0) {
+                countdownElement.textContent = count;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                window.location.href = 'index.html'; // Redirect to the main page
+            }
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>

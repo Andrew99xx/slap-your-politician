@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slap your politician</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body>
+    <div id="countdown" class="countdown">3</div>
+
     <!-- <button>Hover over me!</button> -->
 
-    <img id="ball1" class="ball" src="mamata.png" alt="Ball 1" style="background-color: red;">
-    <img id="ball2" class="ball" src="modi.png" alt="Ball 2" style="background-color: blue;">
-    <img id="ball3" class="ball" src="rahul.png" alt="Ball 3" style="background-color: green;">
+    <img
+      id="ball1"
+      class="ball"
+      src="mamata.png"
+      alt="Ball 1"
+      style="background-color: red"
+    />
+    <img
+      id="ball2"
+      class="ball"
+      src="modi.png"
+      alt="Ball 2"
+      style="background-color: blue"
+    />
+    <img
+      id="ball3"
+      class="ball"
+      src="rahul.png"
+      alt="Ball 3"
+      style="background-color: green"
+    />
+
+    <img
+      id="ball4"
+      class="ball"
+      src="sita.png"
+      alt="Ball 4"
+      style="background-color: yellow"
+    />
     <audio id="cursor-sound" src="slap (1).mp3" preload="auto"></audio>
     <audio id="whoosh-sound" src="whoosh.mp3" preload="auto"></audio>
+    <audio id="mamata" src="mamata.mp3" preload="auto"></audio>
+    <audio id="rahul" src="rahul.mp3" preload="auto"></audio>
+    <audio id="modi" src="modi.mp3" preload="auto"></audio>
+    <audio id="sitaraman" src="sitaraman.mp3" preload="auto"></audio>
+
     <div id="custom-cursor"></div>
+    <!-- Modal Structure -->
+    <div id="clickCountModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Tamacha counter</h2>
+          <span class="close" aria-label="Reload">
+            <i class="fa fa-refresh"></i>
+        </span>
+                </div>
+        <div id="click-counts" class="modal-body">
+          <!-- Click counts will be inserted here -->
+        </div>
+        <!-- <div class="modal-footer">
+          <button class="close">Close</button>
+        </div> -->
+      </div>
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
